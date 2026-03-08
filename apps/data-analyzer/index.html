@@ -1,10 +1,264 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <title>Data Analyzer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Insight Pro | Corporate Analytics</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #10b981;
+            --primary-glow: rgba(16, 185, 129, 0.4);
+            --bg: #020617;
+            --card-bg: rgba(30, 41, 59, 0.7);
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background: radial-gradient(circle at top right, #064e3b, #020617, #020617);
+            color: #f8fafc;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 900px;
+            width: 100%;
+            background: var(--card-bg);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 2.5rem;
+            padding: 4rem;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            color: var(--primary);
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin: 0 0 1.5rem 0;
+            background: linear-gradient(to bottom right, #fff, #94a3b8);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1.1;
+        }
+
+        p.subtitle {
+            font-size: 1.25rem;
+            color: #94a3b8;
+            max-width: 600px;
+            margin-bottom: 3rem;
+            line-height: 1.6;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .feature-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 2rem;
+            border-radius: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: var(--primary);
+            transform: translateY(-5px);
+        }
+
+        .icon {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
+        .feature-card h3 {
+            margin: 0 0 0.75rem 0;
+            font-size: 1.25rem;
+        }
+
+        .feature-card p {
+            margin: 0;
+            color: #64748b;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .cta-container {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            box-shadow: 0 10px 20px -5px var(--primary-glow);
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            transform: scale(1.05);
+            filter: brightness(1.1);
+        }
+
+        .btn-secondary {
+            color: #94a3b8;
+            padding: 1rem 2rem;
+            border-radius: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            color: white;
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        /* Mock UI Elements */
+        .mock-ui {
+            margin-top: 4rem;
+            background: #0f172a;
+            border-radius: 1.5rem;
+            padding: 1.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .mock-header {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #334155;
+        }
+
+        .mock-content {
+            height: 150px;
+            display: flex;
+            align-items: flex-end;
+            gap: 8px;
+            padding-bottom: 1rem;
+        }
+
+        .bar {
+            flex: 1;
+            background: linear-gradient(to top, var(--primary), var(--primary-glow));
+            border-radius: 4px 4px 0 0;
+            animation: grow 1.5s ease-out forwards;
+            transform-origin: bottom;
+            transform: scaleY(0);
+        }
+
+        @keyframes grow {
+            to {
+                transform: scaleY(1);
+            }
+        }
+    </style>
 </head>
-<body style="background: #064e3b; color: white; font-family: sans-serif; display: flex; align-items: center; justify-content: center; height: 100vh;">
-    <h1>📊 Data Analyzer App</h1>
+
+<body>
+    <div class="container">
+        <span class="badge">Business Intelligence Tool</span>
+        <h1>Data Insight Pro</h1>
+        <p class="subtitle">
+            Instantly extract valuable insights from vast corporate data.
+            A next-generation analytics platform supporting decision-making.
+        </p>
+
+        <div class="features">
+            <div class="feature-card">
+                <span class="icon">📈</span>
+                <h3>High-Speed Engine</h3>
+                <p>Process millions of rows in seconds and visualize trends instantly.</p>
+            </div>
+            <div class="feature-card">
+                <span class="icon">☁️</span>
+                <h3>Seamless Integration</h3>
+                <p>Easily import from existing business tools like Excel, CSV, and JSON.</p>
+            </div>
+            <div class="feature-card">
+                <span class="icon">🛡️</span>
+                <h3>Secure Protection</h3>
+                <p>Run in a secure sandbox environment optimized for enterprise-grade safety.</p>
+            </div>
+        </div>
+
+        <div class="cta-container">
+            <a href="#" class="btn-primary">Get Started</a>
+            <a href="#" class="btn-secondary">Documentation</a>
+        </div>
+
+        <div class="mock-ui">
+            <div class="mock-header">
+                <div class="dot" style="background: #ef4444;"></div>
+                <div class="dot" style="background: #fbbf24;"></div>
+                <div class="dot" style="background: #10b981;"></div>
+            </div>
+            <div class="mock-content">
+                <div class="bar" style="height: 40%; animation-delay: 0.1s;"></div>
+                <div class="bar" style="height: 70%; animation-delay: 0.2s;"></div>
+                <div class="bar" style="height: 50%; animation-delay: 0.3s;"></div>
+                <div class="bar" style="height: 90%; animation-delay: 0.4s;"></div>
+                <div class="bar" style="height: 60%; animation-delay: 0.5s;"></div>
+                <div class="bar" style="height: 80%; animation-delay: 0.6s;"></div>
+                <div class="bar" style="height: 45%; animation-delay: 0.7s;"></div>
+            </div>
+        </div>
+    </div>
 </body>
+
 </html>

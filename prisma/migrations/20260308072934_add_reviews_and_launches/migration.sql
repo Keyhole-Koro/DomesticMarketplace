@@ -1,0 +1,21 @@
+-- CreateTable
+CREATE TABLE "Review" (
+    "id" TEXT NOT NULL PRIMARY KEY,
+    "rating" INTEGER NOT NULL,
+    "comment" TEXT,
+    "userId" TEXT NOT NULL,
+    "appId" TEXT NOT NULL,
+    "createdAt" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT "Review_userId_fkey" FOREIGN KEY ("userId") REFERENCES "User" ("id") ON DELETE RESTRICT ON UPDATE CASCADE,
+    CONSTRAINT "Review_appId_fkey" FOREIGN KEY ("appId") REFERENCES "App" ("id") ON DELETE RESTRICT ON UPDATE CASCADE
+);
+
+-- CreateTable
+CREATE TABLE "LaunchLog" (
+    "id" TEXT NOT NULL PRIMARY KEY,
+    "userId" TEXT,
+    "appId" TEXT NOT NULL,
+    "createdAt" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT "LaunchLog_userId_fkey" FOREIGN KEY ("userId") REFERENCES "User" ("id") ON DELETE SET NULL ON UPDATE CASCADE,
+    CONSTRAINT "LaunchLog_appId_fkey" FOREIGN KEY ("appId") REFERENCES "App" ("id") ON DELETE RESTRICT ON UPDATE CASCADE
+);

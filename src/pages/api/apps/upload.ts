@@ -3,11 +3,11 @@ import Busboy from 'busboy';
 import fs from 'fs';
 import path from 'path';
 import unzipper from 'unzipper';
-import { PrismaClient } from '@prisma/client';
+import { prisma } from '@/lib/prisma';
 import { detectAppType } from '@/lib/detector';
 import { v4 as uuidv4 } from 'uuid';
+import { getToken } from 'next-auth/jwt';
 
-const prisma = new PrismaClient();
 export const config = { api: { bodyParser: false } };
 
 function findProjectRoot(dir: string, depth = 0): string | null {
@@ -34,7 +34,10 @@ function moveContents(sourceDir: string, targetDir: string) {
     });
 }
 
-export default function handler(req: NextApiRequest, res: NextApiResponse) {
+export default async function handler(req: NextApiRequest, res: NextApiResponse) {
+    const token = await getToken({ req: req as any, secret: process.env.AUTH_SECRET });
+    if (!token) return res.status(401).json({ success: false, message: 'Unauthorized' });
+
     return new Promise((resolve) => {
         const busboy = Busboy({ headers: req.headers });
         const fields: any = {};
@@ -94,6 +97,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
                         localPath: `apps/${appId}`,
                         dockerImage: `c0mpile/${appId}`,
                         internalPort,
+                        authorId: token.id as string,
                     },
                 });
 

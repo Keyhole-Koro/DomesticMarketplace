@@ -1,4 +1,9 @@
-require('ts-node/register');
+require('ts-node').register({
+    compilerOptions: {
+        module: "CommonJS",
+        esModuleInterop: true
+    }
+});
 const next = require('next');
 const { createServer } = require('http');
 const { parse } = require('url');

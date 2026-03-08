@@ -1,17 +1,25 @@
 import { NextApiRequest, NextApiResponse } from 'next';
-import { PrismaClient } from '@prisma/client';
+import { prisma } from '@/lib/prisma';
 import { deleteAppResources } from '@/lib/docker';
 import fs from 'fs';
 import path from 'path';
-
-const prisma = new PrismaClient();
+import { getToken } from 'next-auth/jwt';
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
     if (req.method !== 'POST') return res.status(405).json({ message: 'Method not allowed' });
+
+    const token = await getToken({ req: req as any, secret: process.env.AUTH_SECRET });
+    if (!token) return res.status(401).json({ success: false, message: 'Unauthorized' });
+
     const { appId } = req.body;
     try {
         const app = await prisma.app.findUnique({ where: { id: appId } });
         if (!app) return res.status(404).json({ message: 'App not found' });
+
+        // Only author or admin can delete
+        if (app.authorId !== token.id && token.role !== 'ADMIN') {
+            return res.status(403).json({ success: false, message: 'Forbidden' });
+        }
 
         await deleteAppResources(appId, app.dockerImage);
         const appDir = path.join(process.cwd(), app.localPath);

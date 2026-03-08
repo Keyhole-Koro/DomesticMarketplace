@@ -1,11 +1,10 @@
 import Docker from 'dockerode';
-import { PrismaClient } from '@prisma/client';
 import path from 'path';
 import fs from 'fs';
 import tar from 'tar-fs';
 
 const docker = new Docker({ socketPath: '/var/run/docker.sock' });
-const prisma = new PrismaClient();
+import { prisma } from './prisma';
 
 async function buildImage(localPath: string, imageName: string): Promise<void> {
     const absolutePath = path.resolve(process.cwd(), localPath);
@@ -51,7 +50,11 @@ export async function launchApp(appId: string): Promise<number> {
     const container = await docker.createContainer({
         Image: app.dockerImage,
         Labels: { 'app-id': appId },
-        HostConfig: { PortBindings: { [`${app.internalPort}/tcp`]: [{ HostPort: '' }] } },
+        HostConfig: {
+            PortBindings: { [`${app.internalPort}/tcp`]: [{ HostPort: '' }] },
+            Memory: 512 * 1024 * 1024, // 512MB limit
+            NanoCpus: 50 * 1000000, // 0.5 CPU limit
+        },
     });
 
     await container.start();

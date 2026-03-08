@@ -15,6 +15,8 @@ model User {
   apps          App[]
   accounts      Account[]
   sessions      Session[]
+  reviews       Review[]
+  launches      LaunchLog[]
 }
 
 model Account {
@@ -52,9 +54,31 @@ model App {
   localPath    String
   dockerImage  String
   internalPort Int      @default(3000)
-  status       String   @default("PUBLISHED")
+  status       String   @default("PENDING")
   authorId     String?
   author       User?    @relation(fields: [authorId], references: [id])
+  reviews      Review[]
+  launches     LaunchLog[]
   createdAt    DateTime @default(now())
   updatedAt    DateTime @updatedAt
+}
+
+model Review {
+  id        String   @id @default(cuid())
+  rating    Int
+  comment   String?
+  userId    String
+  appId     String
+  user      User     @relation(fields: [userId], references: [id])
+  app       App      @relation(fields: [appId], references: [id])
+  createdAt DateTime @default(now())
+}
+
+model LaunchLog {
+  id        String   @id @default(cuid())
+  userId    String?
+  appId     String
+  user      User?    @relation(fields: [userId], references: [id])
+  app       App      @relation(fields: [appId], references: [id])
+  createdAt DateTime @default(now())
 }
