@@ -1,0 +1,105 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  padding: 0;
+  border: 1px solid rgba(0, 62, 87, 0.14);
+  border-radius: 1.25rem;
+  background: rgba(255, 255, 255, 0.68);
+  backdrop-filter: blur(4px);
+  box-shadow: 0 10px 24px rgba(0, 62, 87, 0.08);
+  overflow: hidden;
+  text-decoration: none;
+  outline: none;
+}
+
+.card:focus-visible {
+  outline: 2px solid #ff9c00;
+  outline-offset: 4px;
+}
+
+.imageWrapper {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(0, 62, 87, 0.08);
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.content {
+  padding: 1.5rem;
+  display: grid;
+  gap: 0.8rem;
+}
+
+.meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+
+.type {
+  margin: 0;
+  font-family: var(--font-geist-sans), sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  color: rgba(0, 62, 87, 0.62);
+}
+
+.year {
+  margin: 0;
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 0.72rem;
+  color: rgba(0, 62, 87, 0.56);
+}
+
+.title {
+  margin: 0;
+
+  font-size: 1.2rem;
+  line-height: 1.1;
+  color: #003e57;
+}
+
+.summary {
+  margin: 0;
+  font-family: var(--font-geist-sans), sans-serif;
+  font-size: 0.92rem;
+  line-height: 1.5;
+  color: rgba(0, 62, 87, 0.86);
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.38rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tags li {
+  padding: 0.32rem 0.55rem;
+  border-radius: 999px;
+  border: 1px solid rgba(0, 62, 87, 0.14);
+  font-family: var(--font-geist-sans), sans-serif;
+  font-size: 0.7rem;
+  color: rgba(0, 62, 87, 0.72);
+  background: rgba(255, 255, 255, 0.65);
+}
+
+.link {
+  margin-top: 0.2rem;
+  width: fit-content;
+  font-family: var(--font-geist-sans), sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  color: #003e57;
+}

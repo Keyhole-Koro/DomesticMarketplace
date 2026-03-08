@@ -1,0 +1,28 @@
+.page {
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+  min-height: 100svh;
+  padding: clamp(0.8rem, 2.2vw, 1.4rem) clamp(0.75rem, 2.5vw, 2.2rem) 4rem;
+  background: #ffffff;
+}
+
+.page>div[aria-hidden="true"] {
+  z-index: 0;
+}
+
+@media (max-width: 48rem) {
+  .page {
+    padding-inline: 0.6rem;
+  }
+
+  .page>div[aria-hidden="true"] {
+    opacity: 0.76;
+  }
+}
+
+@media (max-width: 30rem) {
+  .page>div[aria-hidden="true"] {
+    opacity: 0.64;
+  }
+}

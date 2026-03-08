@@ -1,0 +1,164 @@
+.hero {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 72rem);
+  min-height: min(74svh, 42rem);
+  margin: 0 auto;
+  display: grid;
+  place-items: center;
+  margin-bottom: 10%;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  width: min(52vw, 34rem);
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 186, 42, 0.72) 0%, rgba(255, 186, 42, 0) 70%);
+  filter: blur(12px);
+}
+
+
+.title {
+  position: relative;
+  z-index: 2;
+  margin: 0;
+  max-inline-size: 100%;
+  overflow-wrap: break-word;
+  text-align: center;
+  text-wrap: balance;
+
+  font-size: clamp(2rem, 10vw, 6.4rem);
+  line-height: 0.95;
+  letter-spacing: 0.01em;
+  color: #003e57;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.24);
+}
+
+.heroLead {
+  position: absolute;
+  left: 50%;
+  bottom: clamp(6.2rem, 15vh, 9rem);
+  transform: translateX(-50%);
+  width: min(32rem, 90%);
+  margin: 0;
+  text-align: center;
+  font-family: var(--font-geist-sans), sans-serif;
+  font-size: clamp(0.92rem, 1.7vw, 1.05rem);
+  line-height: 1.6;
+  color: rgba(0, 62, 87, 0.78);
+}
+
+.ctaGroup {
+  position: absolute;
+  left: 50%;
+  bottom: clamp(1rem, 5vh, 3rem);
+  z-index: 3;
+  transform: translateX(-50%);
+  display: grid;
+  gap: 0.45rem;
+  justify-items: center;
+}
+
+.scrollButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  min-height: 3rem;
+  padding: 0.42rem 0.5rem 0.42rem 1rem;
+  border: 1px solid rgba(0, 62, 87, 0.12);
+  border-radius: 999px;
+  background: #ff9c00;
+  color: #003e57;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  line-height: 1;
+  text-decoration: none;
+  box-shadow: 0 8px 20px rgba(255, 156, 0, 0.35);
+}
+
+.scrollLabel {
+  display: inline-block;
+}
+
+.scrollIcon {
+  width: 2.1rem;
+  aspect-ratio: 1 / 1;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: rgba(0, 62, 87, 0.1);
+  font-size: 1.25rem;
+}
+
+.ctaHint {
+  margin: 0;
+  font-family: var(--font-geist-sans), sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.05em;
+  color: rgba(0, 62, 87, 0.72);
+}
+
+@media (max-width: 64rem) {
+  .title {
+    font-size: clamp(2.2rem, 12vw, 5.8rem);
+  }
+
+  .hero::before {
+    width: min(64vw, 30rem);
+  }
+}
+
+@media (max-width: 48rem) {
+  .hero {
+    min-height: 68svh;
+  }
+
+  .hero::before {
+    width: min(74vw, 24rem);
+    filter: blur(10px);
+  }
+
+  .title {
+    font-size: clamp(1.9rem, 13vw, 4.2rem);
+    line-height: 0.98;
+  }
+
+  .heroLead {
+    bottom: clamp(6rem, 17vh, 8rem);
+    font-size: 0.9rem;
+  }
+
+  .scrollButton {
+    min-height: 2.8rem;
+    padding: 0.38rem 0.44rem 0.38rem 0.85rem;
+    font-size: 0.75rem;
+  }
+
+  .scrollIcon {
+    width: 1.95rem;
+    font-size: 1.1rem;
+  }
+
+  .ctaHint {
+    font-size: 0.67rem;
+  }
+}
+
+@media (max-width: 30rem) {
+  .hero {
+    min-height: 64svh;
+  }
+
+  .title {
+    font-size: clamp(1.45rem, 11vw, 2.3rem);
+  }
+
+  .heroLead {
+    bottom: 5.4rem;
+    font-size: 0.84rem;
+  }
+}

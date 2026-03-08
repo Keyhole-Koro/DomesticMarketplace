@@ -1,0 +1,15 @@
+.footer {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 72rem);
+  margin: 1rem auto 0;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(0, 62, 87, 0.12);
+}
+
+.footer p {
+  margin: 0;
+  font-family: var(--font-geist-sans), sans-serif;
+  font-size: 0.78rem;
+  color: rgba(0, 62, 87, 0.62);
+}

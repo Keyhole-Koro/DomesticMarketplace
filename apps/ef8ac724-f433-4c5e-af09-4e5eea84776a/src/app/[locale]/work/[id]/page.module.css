@@ -1,0 +1,257 @@
+.page {
+    position: relative;
+    overflow: hidden;
+    min-height: 100vh;
+    min-height: 100svh;
+    background: #ffffff;
+    padding: clamp(0.8rem, 2.2vw, 1.4rem) clamp(0.75rem, 2.5vw, 2.2rem) 4rem;
+}
+
+.organicSection {
+    position: relative;
+    z-index: 10;
+    width: min(100%, 68rem);
+    margin: 2rem auto 6rem;
+    padding: 0 1rem;
+}
+
+.backBtn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--font-geist-sans), sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #003e57;
+    text-decoration: none;
+    margin-bottom: 2rem;
+}
+
+
+
+.hero {
+    margin-bottom: 2rem;
+}
+
+.title {
+
+    font-size: clamp(2rem, 6vw, 4rem);
+    color: #003e57;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+}
+
+.meta {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 0;
+    font-family: var(--font-geist-sans), sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    color: #003e57;
+}
+
+.infoBar {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    margin-bottom: 3rem;
+    padding: 2.5rem 3rem;
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(0, 62, 87, 0.08);
+    border-radius: 1.5rem;
+    box-shadow: 0 4px 24px -8px rgba(0, 62, 87, 0.06);
+}
+
+.infoItem {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    flex: 1;
+}
+
+.infoLabel {
+    font-family: var(--font-geist-sans), sans-serif;
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    color: rgba(0, 62, 87, 0.5);
+}
+
+.infoValue {
+    font-size: 1.1rem;
+    font-weight: 900;
+    color: #003e57;
+}
+
+.galleryContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 4rem;
+}
+
+.mainDisplay {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 1.5rem;
+    overflow: hidden;
+    border: 1px solid rgba(0, 62, 87, 0.12);
+    background: white;
+    box-shadow: 0 20px 48px -12px rgba(0, 62, 87, 0.15);
+}
+
+.mainImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.thumbnailGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.25rem;
+}
+
+.thumbnailBtn {
+    aspect-ratio: 1 / 1;
+    padding: 0;
+    border: 2px solid transparent;
+    border-radius: 1rem;
+    overflow: hidden;
+    background: white;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 62, 87, 0.08);
+}
+
+
+
+.activeThumbnail {
+    border-color: #ff9c00;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(255, 156, 0, 0.2);
+}
+
+.thumbImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.7;
+}
+
+.activeThumbnail .thumbImage {
+    opacity: 1;
+}
+
+.contentGrid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 4rem;
+}
+
+.descriptionSection h2,
+.sidebarSection h2 {
+
+    font-size: 1.5rem;
+    color: #003e57;
+    margin-bottom: 1.5rem;
+}
+
+.description {
+    font-family: var(--font-geist-sans), sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: rgba(0, 62, 87, 0.85);
+    white-space: pre-wrap;
+    margin-bottom: 1.5rem;
+}
+
+.achievements {
+    font-family: var(--font-geist-sans), sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: rgba(0, 62, 87, 0.85);
+    white-space: pre-wrap;
+}
+
+.sidebarSection {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.techList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    list-style: none;
+    padding: 0;
+}
+
+.techItem {
+    background: white;
+    border: 1px solid rgba(0, 62, 87, 0.1);
+    padding: 0.5rem 1rem;
+    border-radius: 999px;
+    font-family: var(--font-geist-sans), sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #003e57;
+}
+
+.links {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.linkBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    background: #003e57;
+    color: white;
+    padding: 1rem;
+    border-radius: 0.8rem;
+    text-decoration: none;
+    font-weight: 900;
+}
+
+
+
+.linkBtnSecondary {
+    background: transparent;
+    border: 2px solid #003e57;
+    color: #003e57;
+    font-weight: 900;
+}
+
+
+
+.notFound {
+    text-align: center;
+    padding: 10rem 2rem;
+}
+
+.notFound h1 {
+
+    font-size: 3rem;
+    color: #003e57;
+    margin-bottom: 2rem;
+}
+
+@media (max-width: 64rem) {
+    .contentGrid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .infoBar {
+        flex-direction: column;
+        padding: 2rem;
+        gap: 1.5rem;
+    }
+}

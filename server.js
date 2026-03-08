@@ -8,11 +8,50 @@ const { stopApp, getRunningContainerPort } = require('./src/lib/docker');
 const dev = process.env.NODE_ENV !== 'production';
 const app = next({ dev });
 const handle = app.getRequestHandler();
-const proxy = httpProxy.createProxyServer({});
+const proxy = httpProxy.createProxyServer({ xfwd: true });
+
+// Handle proxy errors (e.g., app still starting)
+proxy.on('error', (err, req, res) => {
+    console.error(`Proxy Error: ${err.message}`);
+    // Prevent crash on ECONNRESET or other socket errors
+    if (res.headersSent) return;
+    res.writeHead(502, { 'Content-Type': 'text/plain' });
+    res.end('The application is starting or unavailable. Please refresh in a few seconds.');
+});
+
+// Handle redirects from the proxied app
+proxy.on('proxyRes', (proxyRes, req, res) => {
+    const appId = req.appId;
+    if (appId && proxyRes.headers.location) {
+        let location = proxyRes.headers.location;
+        const host = req.headers.host || 'localhost:3000';
+
+        // 1. Handle absolute redirects back to the host (e.g., http://localhost:3000/ja)
+        if (location.includes(host) && !location.includes(`/active-apps/${appId}`)) {
+            const urlObj = new URL(location);
+            proxyRes.headers.location = `/active-apps/${appId}${urlObj.pathname}${urlObj.search}`;
+        }
+        // 2. Handle relative redirects within the container (starting with /)
+        else if (location.startsWith('/') && !location.startsWith(`/active-apps/${appId}`)) {
+            proxyRes.headers.location = `/active-apps/${appId}${location}`;
+        }
+    }
+});
+
+// Prevent process exit on some network-related uncaught errors
+process.on('uncaughtException', (err) => {
+    if (err.code === 'ECONNRESET' || err.code === 'EPIPE') {
+        console.warn('Recovered from socket error:', err.message);
+        return;
+    }
+    console.error('Uncaught Exception:', err);
+    // For other errors, we might still want to exit, but let's be cautious
+});
 
 // Activity Tracking
 const lastActivity = new Map();
 const IDLE_TIMEOUT = 5 * 60 * 1000; // 5 minutes
+
 
 setInterval(async () => {
     const now = Date.now();
@@ -32,6 +71,7 @@ app.prepare().then(() => {
 
         if (pathname.startsWith('/active-apps/')) {
             const appId = pathname.split('/')[2];
+            req.appId = appId; // Store for proxyRes handler
             const targetPort = await getRunningContainerPort(appId);
 
             if (targetPort) {
@@ -40,11 +80,28 @@ app.prepare().then(() => {
                 req.url = targetPath;
                 return proxy.web(req, res, { target: `http://localhost:${targetPort}` });
             }
+        } else {
+            // Fallback for static assets (images, etc.) requested from root but belonging to a proxied app
+            const referer = req.headers.referer;
+            if (referer && referer.includes('/active-apps/')) {
+                const match = referer.match(/\/active-apps\/([^/?#]+)/);
+                if (match) {
+                    const appId = match[1];
+                    req.appId = appId;
+                    const targetPort = await getRunningContainerPort(appId);
+                    if (targetPort) {
+                        lastActivity.set(appId, Date.now());
+                        return proxy.web(req, res, { target: `http://localhost:${targetPort}` });
+                    }
+                }
+            }
         }
 
         handle(req, res, parsedUrl);
+
     }).listen(3000, (err) => {
         if (err) throw err;
         console.log('> Ready on http://localhost:3000');
     });
 });
+

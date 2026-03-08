@@ -1,0 +1,73 @@
+.workSection {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 72rem);
+  margin: 0 auto;
+  padding: clamp(3rem, 6vw, 5rem) clamp(1rem, 2vw, 2rem);
+}
+
+.workHeader {
+  margin: 0 auto 3.5rem;
+  max-width: 44rem;
+  text-align: center;
+}
+
+.workKicker {
+  margin: 0;
+  font-family: var(--font-geist-sans), sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: #ff9c00;
+  text-transform: uppercase;
+}
+
+.workTitle {
+  margin: 0.6rem 0 0;
+  font-size: clamp(2rem, 5vw, 3rem);
+  color: #003e57;
+  line-height: 1.1;
+}
+
+.workLead {
+  margin: 0.8rem 0 0;
+  font-family: var(--font-geist-sans), sans-serif;
+  font-size: clamp(1rem, 1.8vw, 1.1rem);
+  line-height: 1.6;
+  color: rgba(0, 62, 87, 0.78);
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.primaryLink,
+.secondaryLink {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 3rem;
+  padding: 0 2rem;
+  border-radius: 999px;
+  font-family: var(--font-geist-sans), sans-serif;
+  font-size: 0.9rem;
+  font-weight: 900;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.primaryLink {
+  color: #ffffff;
+  background: #003e57;
+  box-shadow: 0 4px 12px rgba(0, 62, 87, 0.15);
+}
+
+.secondaryLink {
+  color: #003e57;
+  border: 2px solid #003e57;
+  background: transparent;
+}

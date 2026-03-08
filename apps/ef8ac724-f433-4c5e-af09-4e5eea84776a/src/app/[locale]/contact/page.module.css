@@ -1,0 +1,330 @@
+.page {
+    position: relative;
+    overflow: hidden;
+    min-height: 100vh;
+    min-height: 100svh;
+    background: #ffffff;
+    padding: clamp(0.8rem, 2.2vw, 1.4rem) clamp(0.75rem, 2.5vw, 2.2rem) 4rem;
+}
+
+.hero {
+    position: relative;
+    z-index: 10;
+    width: min(100%, 72rem);
+    min-height: min(74svh, 42rem);
+    margin: 0 auto;
+    display: grid;
+    place-items: center;
+    margin-bottom: 2rem;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    z-index: 0;
+    width: min(52vw, 34rem);
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 186, 42, 0.72) 0%, rgba(255, 186, 42, 0) 70%);
+    filter: blur(12px);
+}
+
+.heroTitle {
+    position: relative;
+    z-index: 2;
+    margin: 0;
+    max-inline-size: 100%;
+    overflow-wrap: break-word;
+    text-align: center;
+    text-wrap: balance;
+
+    font-size: clamp(2rem, 10vw, 6.4rem);
+    line-height: 0.95;
+    letter-spacing: 0.01em;
+    color: #003e57;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.24);
+}
+
+.ctaGroup {
+    position: absolute;
+    left: 50%;
+    bottom: clamp(1rem, 5vh, 3rem);
+    z-index: 3;
+    transform: translateX(-50%);
+    display: grid;
+    gap: 0.45rem;
+    justify-items: center;
+}
+
+.ctaHint {
+    margin: 0;
+    font-family: var(--font-geist-sans), sans-serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.05em;
+    color: rgba(0, 62, 87, 0.72);
+}
+
+.contentContainer {
+    position: relative;
+    z-index: 2;
+    width: min(100%, 68rem);
+    margin: 0 auto;
+}
+
+.mainGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+
+/* Contact Card */
+.contactCard {
+    background: #ffffff;
+    border: 1px solid rgba(0, 62, 87, 0.12);
+    border-radius: 2rem;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    box-shadow: 0 20px 48px -12px rgba(0, 62, 87, 0.08);
+}
+
+.cardHeader {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    color: #ff9c00;
+}
+
+.cardHeader span {
+    font-size: 2rem;
+}
+
+.cardTitle {
+    margin: 0;
+    font-size: 1.5rem;
+    color: #003e57;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.philosophy {
+    margin: 0;
+    font-family: var(--font-geist-sans), sans-serif;
+    font-size: 1.15rem;
+    line-height: 1.7;
+    color: rgba(0, 62, 87, 0.85);
+}
+
+.actionArea {
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.mailBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 4rem;
+    background: #003e57;
+    color: #ffffff;
+    border-radius: 1rem;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 900;
+    box-shadow: 0 8px 16px rgba(0, 62, 87, 0.15);
+    transition: transform 0.2s ease;
+}
+
+.copyWrapper {
+    display: flex;
+    justify-content: center;
+}
+
+/* Terminal Styles */
+.terminalWrapper {
+    background: #1e1e1e;
+    border: 1px solid #333;
+    border-radius: 1.25rem;
+    overflow: hidden;
+    box-shadow: 0 20px 48px rgba(0, 0, 0, 0.25);
+    display: flex;
+    flex-direction: column;
+}
+
+.terminalHeader {
+    background: #2a2a2a;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    padding: 0 1.25rem;
+    gap: 1rem;
+    border-bottom: 1px solid #111;
+}
+
+.dots {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.dotRed,
+.dotYellow,
+.dotGreen {
+    width: 0.75rem;
+    height: 0.75rem;
+    border-radius: 50%;
+}
+
+.dotRed {
+    background: #ff5f56;
+}
+
+.dotYellow {
+    background: #ffbd2e;
+}
+
+.dotGreen {
+    background: #27c93f;
+}
+
+.terminalTitle {
+    margin: 0;
+    font-family: var(--font-geist-mono), monospace;
+    font-size: 0.8rem;
+    color: #888;
+}
+
+.terminalBody {
+    padding: 2.5rem;
+    flex: 1;
+}
+
+.terminalText {
+    font-family: var(--font-geist-mono), monospace;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #d4d4d4;
+}
+
+.terminalText p {
+    margin: 0 0 1.5rem;
+}
+
+.prompt {
+    color: #4af626;
+    margin-right: 0.6rem;
+}
+
+.cliLinks {
+    display: flex;
+    gap: 1.2rem;
+    margin: -0.5rem 0 1.5rem 0.5rem;
+}
+
+.cliLink {
+    color: #569cd6;
+    text-decoration: none;
+    font-size: 0.9rem;
+    border-bottom: 1px solid transparent;
+}
+
+
+.cliEmail {
+    margin: 0 0 0.4rem 0.5rem !important;
+    color: #ce9178;
+}
+
+.cursor {
+    display: inline-block;
+    width: 0.6rem;
+    height: 1.2rem;
+    background: #d4d4d4;
+    animation: blink 1s step-end infinite;
+    vertical-align: middle;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+/* Location Info */
+.locationInfo {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    padding: 2rem;
+    color: rgba(0, 62, 87, 0.5);
+}
+
+.locationInfo span {
+    font-size: 1.2rem;
+}
+
+.locationInfo p {
+    margin: 0;
+    font-family: var(--font-geist-sans), sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+@media (max-width: 64rem) {
+    .mainGrid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 48rem) {
+    .page {
+        padding: 1rem 1.5rem 4rem;
+    }
+
+    .hero {
+        min-height: 68svh;
+    }
+
+    .hero::before {
+        width: min(74vw, 24rem);
+        filter: blur(10px);
+    }
+
+    .heroTitle {
+        font-size: clamp(1.9rem, 13vw, 4.2rem);
+        line-height: 0.98;
+    }
+
+    .ctaHint {
+        font-size: 0.67rem;
+    }
+
+    .contactCard {
+        padding: 2rem;
+    }
+
+    .terminalBody {
+        padding: 1.5rem;
+    }
+
+    .cliLinks {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}
+
+@media (max-width: 30rem) {
+    .hero {
+        min-height: 64svh;
+    }
+
+    .heroTitle {
+        font-size: clamp(1.45rem, 11vw, 2.3rem);
+    }
+}

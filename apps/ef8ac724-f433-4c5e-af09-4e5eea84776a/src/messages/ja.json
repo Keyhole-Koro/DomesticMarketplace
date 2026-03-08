@@ -1,0 +1,115 @@
+{
+    "Hero": {
+        "title": "PORTFOLIO",
+        "subtitle": "ベレー帽のエンジニア"
+    },
+    "About": {
+        "kicker": "ABOUT",
+        "title": "自己紹介",
+        "lead": "神山まるごと高専でデザイン×テクノロジー×起業家精神を学ぶ学生エンジニア/デザイナーです。「楽しさ」をキーワードに、モノづくりとデザインを追求しています。",
+        "readMore": "私について",
+        "contact": "お問い合わせ"
+    },
+    "Common": {
+        "nav": {
+            "work": "Work",
+            "about": "About",
+            "contact": "Contact"
+        }
+    },
+    "Contact": {
+        "kicker": "CONTACT",
+        "title": "お問い合わせ",
+        "lead": "ご興味があれば、お気軽にご連絡ください"
+    },
+    "Footer": {
+        "copyright": "© {year} Buchi Portfolio. All rights reserved."
+    },
+    "WorkSection": {
+        "kicker": "WORK",
+        "title": "最近の活動はこちら！",
+        "lead": "私が関わらせていただいた様々なプロジェクトをまとめています。",
+        "links": {
+            "discuss": "他のプロジェクトも見る"
+        },
+        "cta": "詳細を見る →"
+    },
+    "Work": {
+        "title": "WORK",
+        "subtitle": "活動内容をご覧ください",
+        "selected": "主なプロジェクト",
+        "noResults": "該当するプロジェクトが見つかりませんでした。",
+        "cta": "プロジェクトを見る →",
+        "sort": {
+            "label": "並び替え:",
+            "newest": "新着順",
+            "oldest": "古い順",
+            "alphabetical": "名前順"
+        },
+        "detail": {
+            "overview": "概要",
+            "techStack": "技術スタック",
+            "links": "リンク",
+            "live": "プレビュー →",
+            "source": "ソースコードを見る",
+            "achievements": "実績"
+        }
+    },
+    "AboutPage": {
+        "hero": {
+            "title1": "READ",
+            "title2": "ME",
+            "subtitle": "スクロールして詳しく見る"
+        },
+        "profile": {
+            "name": "溝渕 晃大",
+            "location": "日本在住",
+            "role": "学生エンジニア / デザイナー",
+            "philosophy": "こんにちは！\n現在神山まるごと高専で、デザイン×テクノロジー×起業家精神を学びながら活動している「ベレー帽のエンジニア」こと、溝渕晃大です。\n小さい頃からプログラミングが好きだったのですが、今ではモノづくり、コトおこしには「プログラムできる力」だけでなく、「デザイン」を理解し、応用する力も大事だと感じ、勉強を続けています。\n神山まるごと高専では、主にエンジニアとして様々な分野の実装に挑戦し、知見を広げ、勉強している最中です。\n「楽しさ」というキーワードを胸に日々の創作活動に臨んでいます。",
+            "contact": "お問い合わせ"
+        },
+        "experience": {
+            "title": "経験",
+            "items": [
+                {
+                    "period": "2025 - 現在",
+                    "role": "ソニーグループでの勤務",
+                    "description": "ソニーグループ / 一般社団法人Arc & Beyondと、神山まるごと高専の学生が一緒に取り組む共創プログラムに参加し、学生アルバイトとして活動。"
+                },
+                {
+                    "period": "2024 - 現在",
+                    "role": "神山まるごと高専 学生",
+                    "description": "徳島県神山町にある、デザイン・エンジニアリング・起業家精神を学ぶ私立高専に入学。"
+                }
+            ]
+        },
+        "skills": {
+            "title": "スキル",
+            "categories": {
+                "engineering": "エンジニアリング",
+                "design": "デザイン",
+                "tools": "ツール・その他"
+            }
+        }
+    },
+    "ContactPage": {
+        "hero": {
+            "title": "CONTACT",
+            "subtitle": "気楽にご連絡ください"
+        },
+        "profile": {
+            "title": "連絡先",
+            "location": "日本拠点",
+            "philosophy": "現在、フリーランスのプロジェクトやコラボレーションを受け付けています。質問や挨拶など、お気軽にご連絡ください。できる限り早く返信いたします。",
+            "checkOut": "連絡はこちらから",
+            "sendEmail": "メールを送る"
+        },
+        "terminal": {
+            "title": "kota@portfolio:~",
+            "socialsPrompt": "ls -la ~/socials",
+            "methodsPrompt": "cat contact_methods.txt",
+            "email": "- メール: kmc2438@kamiyama.ac.jp",
+            "sns": "- SNS: X、LinkedInでのDMが可能です"
+        }
+    }
+}

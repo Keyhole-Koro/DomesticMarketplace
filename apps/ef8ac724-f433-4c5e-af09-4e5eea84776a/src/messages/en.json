@@ -1,0 +1,115 @@
+{
+    "Hero": {
+        "title": "PORTFOLIO",
+        "subtitle": "Engineer in the Beret"
+    },
+    "About": {
+        "kicker": "ABOUT",
+        "title": "About Me",
+        "lead": "A student engineer and designer at Kamiyama Marugoto College, exploring Design × Technology × Entrepreneurship with a focus on 'Joy'. I pursue the intersection of creation and design through this lens.",
+        "readMore": "Read Full Story",
+        "contact": "Contact Me"
+    },
+    "Common": {
+        "nav": {
+            "work": "Work",
+            "about": "About",
+            "contact": "Contact"
+        }
+    },
+    "Contact": {
+        "kicker": "CONTACT",
+        "title": "Contact me",
+        "lead": "If you have any project in mind, feel free to contact me."
+    },
+    "Footer": {
+        "copyright": "© {year} Buchi Portfolio. All rights reserved."
+    },
+    "WorkSection": {
+        "kicker": "WORK",
+        "title": "Recent Activities",
+        "lead": "A selection of projects that I have worked on.",
+        "links": {
+            "discuss": "Check out other projects"
+        },
+        "cta": "View Details →"
+    },
+    "Work": {
+        "title": "Work",
+        "subtitle": "Check out my latest projects!",
+        "selected": "Selected Projects",
+        "noResults": "No projects found matching your criteria.",
+        "cta": "View Project →",
+        "sort": {
+            "label": "Sort by:",
+            "newest": "Newest First",
+            "oldest": "Oldest First",
+            "alphabetical": "Alphabetical"
+        },
+        "detail": {
+            "overview": "Overview",
+            "techStack": "Tech Stack",
+            "links": "Links",
+            "live": "Live Preview →",
+            "source": "View Source Code",
+            "achievements": "Achievements"
+        }
+    },
+    "AboutPage": {
+        "hero": {
+            "title1": "READ",
+            "title2": "ME",
+            "subtitle": "Scroll down to see more!"
+        },
+        "profile": {
+            "name": "Kota Mizobuchi",
+            "location": "Based in Japan",
+            "role": "Student Engineer / Designer",
+            "philosophy": "Hello!\nI’m Kota Mizobuchi, also known as the “Engineer in the Beret,” and I’m currently studying design, technology, and entrepreneurship at Kamiyama Marugoto College of Technology.\nI’ve loved programming since I was little, but over time I’ve come to believe that creating products and sparking new ideas takes more than just coding skills. It also requires understanding design and being able to apply it in real ways. So I’ve been continuing to study and grow in that area.\nAt Kamiyama Marugoto KOSEN, I mainly work as an engineer, taking on implementation challenges across a wide range of fields as I expand my knowledge and skills.\nI approach my daily creative activities with the keyword \"Joy\" in my heart.",
+            "contact": "Contact Me"
+        },
+        "experience": {
+            "title": "Experience",
+            "items": [
+                {
+                    "period": "2025 - Present",
+                    "role": "Working at Sony Group",
+                    "description": "Participating in a co-creation program between Sony Group / Arc & Beyond and students of Kamiyama Marugoto College, working as a student intern."
+                },
+                {
+                    "period": "2024 - Present",
+                    "role": "Student at Kamiyama Marugoto College",
+                    "description": "Enrolled in a private vocational college in Kamiyama, Tokushima, where I study Design, Engineering, and Entrepreneurship."
+                }
+            ]
+        },
+        "skills": {
+            "title": "Skills",
+            "categories": {
+                "engineering": "Engineering",
+                "design": "Design",
+                "tools": "Tools & Others"
+            }
+        }
+    },
+    "ContactPage": {
+        "hero": {
+            "title": "CONTACT",
+            "subtitle": "Let's build something together!"
+        },
+        "profile": {
+            "title": "Contact",
+            "location": "Based in Japan",
+            "philosophy": "I am currently open for freelance projects and collaborations. Feel free to contact me for questions or just to say hello. I will get back to you as soon as possible.",
+            "checkOut": "Contact me here",
+            "sendEmail": "Send an Email"
+        },
+        "terminal": {
+            "title": "kota@portfolio:~",
+            "socialsPrompt": "ls -la ~/socials",
+            "methodsPrompt": "cat contact_methods.txt",
+            "email": "- Email: kmc2438@kamiyama.ac.jp",
+            "sns": "- SNS: DM available on X or LinkedIn"
+        }
+    }
+}
