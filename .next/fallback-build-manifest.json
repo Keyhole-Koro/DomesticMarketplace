@@ -1,21 +1,31 @@
 {
+  "polyfillFiles": [
+    "static/chunks/polyfills.js"
+  ],
+  "devFiles": [
+    "static/chunks/fallback/react-refresh.js"
+  ],
+  "ampDevFiles": [
+    "static/chunks/fallback/webpack.js",
+    "static/chunks/fallback/amp.js"
+  ],
+  "lowPriorityFiles": [],
+  "rootMainFiles": [
+    "static/chunks/fallback/webpack.js",
+    "static/chunks/fallback/main-app.js"
+  ],
+  "rootMainFilesTree": {},
   "pages": {
     "/_app": [
-      "static/chunks/399ce244c0ed1b56.js",
-      "static/chunks/dd6a42bc2c8a9a63.js",
-      "static/chunks/turbopack-2fecf19d8a29051a.js"
+      "static/chunks/fallback/webpack.js",
+      "static/chunks/fallback/main.js",
+      "static/chunks/fallback/pages/_app.js"
     ],
     "/_error": [
-      "static/chunks/38e353c2b8e0c054.js",
-      "static/chunks/dd6a42bc2c8a9a63.js",
-      "static/chunks/turbopack-1f76e8f4c81004e8.js"
+      "static/chunks/fallback/webpack.js",
+      "static/chunks/fallback/main.js",
+      "static/chunks/fallback/pages/_error.js"
     ]
   },
-  "devFiles": [],
-  "polyfillFiles": [],
-  "lowPriorityFiles": [
-    "static/VFeY9zY1SXgYWEmKVEGAO/_ssgManifest.js",
-    "static/VFeY9zY1SXgYWEmKVEGAO/_buildManifest.js"
-  ],
-  "rootMainFiles": []
+  "ampFirstPages": []
 }
