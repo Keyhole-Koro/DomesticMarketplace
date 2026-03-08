@@ -131,6 +131,7 @@ export default function Marketplace() {
                     <p className="text-gray-400 mt-2">Internal Tools & Business Apps Store</p>
                 </div>
                 <div className="flex items-center gap-6">
+                    <Link href="/vibe" className="text-sm font-bold text-purple-400 hover:text-purple-300 transition">Vibe AI Builder</Link>
                     {(session?.user as any)?.role === 'ADMIN' && (
                         <Link href="/admin" className="text-sm font-bold text-gray-400 hover:text-white transition">Admin Panel</Link>
                     )}

@@ -75,9 +75,32 @@ app.prepare().then(() => {
         const { pathname } = parsedUrl;
 
         if (pathname.startsWith('/active-apps/')) {
-            const appId = pathname.split('/')[2];
-            req.appId = appId; // Store for proxyRes handler
-            const targetPort = await getRunningContainerPort(appId);
+            const parts = pathname.split('/'); // ['', 'active-apps', appId, ...rest]
+            const appId = parts[2];
+            req.appId = appId;
+            let targetPort = await getRunningContainerPort(appId);
+
+            // If no container matched, the URL may be a relative asset that lost the appId segment.
+            // e.g. browser requested /active-apps/styles.css instead of /active-apps/{uuid}/styles.css
+            // Fall back to the Referer header to find the real appId.
+            if (!targetPort) {
+                const referer = req.headers.referer;
+                if (referer && referer.includes('/active-apps/')) {
+                    const match = referer.match(/\/active-apps\/([^/?#]+)/);
+                    if (match) {
+                        const realAppId = match[1];
+                        const refererPort = await getRunningContainerPort(realAppId);
+                        if (refererPort) {
+                            req.appId = realAppId;
+                            lastActivity.set(realAppId, Date.now());
+                            // The asset path is everything after /active-apps/
+                            const assetPath = '/' + parts.slice(2).join('/');
+                            req.url = assetPath;
+                            return proxy.web(req, res, { target: `http://localhost:${refererPort}` });
+                        }
+                    }
+                }
+            }
 
             if (targetPort) {
                 lastActivity.set(appId, Date.now());
@@ -86,7 +109,7 @@ app.prepare().then(() => {
                 return proxy.web(req, res, { target: `http://localhost:${targetPort}` });
             }
         } else {
-            // Fallback for static assets (images, etc.) requested from root but belonging to a proxied app
+            // Fallback for static assets requested from root but belonging to a proxied app
             const referer = req.headers.referer;
             if (referer && referer.includes('/active-apps/')) {
                 const match = referer.match(/\/active-apps\/([^/?#]+)/);
