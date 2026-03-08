@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 16, "column": 0}, "map": {"version":3,"sources":["file:///Users/buchi/Documents/Programming/c0mpile/src/pages/api/apps/index.ts"],"sourcesContent":["import { NextApiRequest, NextApiResponse } from 'next';\nimport { PrismaClient } from '@prisma/client';\n\nconst prisma = new PrismaClient();\n\nexport default async function handler(req: NextApiRequest, res: NextApiResponse) {\n    if (req.method !== 'GET') {\n        return res.status(405).json({ message: 'Method not allowed' });\n    }\n\n    try {\n        const apps = await prisma.app.findMany({\n            orderBy: { createdAt: 'desc' }\n        });\n        return res.status(200).json(apps);\n    } catch (error: any) {\n        console.error('Fetch apps error:', error);\n        return res.status(500).json({ message: 'Failed to fetch apps' });\n    }\n}\n"],"names":[],"mappings":";;;;AACA;;AAEA,MAAM,SAAS,IAAI,sMAAY;AAEhB,eAAe,QAAQ,GAAmB,EAAE,GAAoB;IAC3E,IAAI,IAAI,MAAM,KAAK,OAAO;QACtB,OAAO,IAAI,MAAM,CAAC,KAAK,IAAI,CAAC;YAAE,SAAS;QAAqB;IAChE;IAEA,IAAI;QACA,MAAM,OAAO,MAAM,OAAO,GAAG,CAAC,QAAQ,CAAC;YACnC,SAAS;gBAAE,WAAW;YAAO;QACjC;QACA,OAAO,IAAI,MAAM,CAAC,KAAK,IAAI,CAAC;IAChC,EAAE,OAAO,OAAY;QACjB,QAAQ,KAAK,CAAC,qBAAqB;QACnC,OAAO,IAAI,MAAM,CAAC,KAAK,IAAI,CAAC;YAAE,SAAS;QAAuB;IAClE;AACJ"}}]
+}

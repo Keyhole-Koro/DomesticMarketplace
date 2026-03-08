@@ -1,0 +1,406 @@
+[00:00:03.049] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:12:26.330] Browser ERROR   uncaughtError: Error: ./package.json:6:1
+Error parsing package.json file
+  4 |   "private": true,
+  5 |   "scripts": {
+> 6 | <<<<<<< HEAD
+    | ^
+  7 |     "dev": "node server.js",
+  8 | =======
+  9 |     "dev": "next dev",
+
+package.json is not parseable: invalid JSON: key must be a string at line 6 column 1
+
+
+[00:12:26.495] Browser ERROR   ./package.json:6:1
+Error parsing package.json file
+  4 |   "private": true,
+  5 |   "scripts": {
+> 6 | <<<<<<< HEAD
+    | ^
+  7 |     "dev": "node server.js",
+  8 | =======
+  9 |     "dev": "next dev",
+
+package.json is not parseable: invalid JSON: key must be a string at line 6 column 1
+[00:12:26.495] Browser ERROR   ./src/app/globals.css
+Error evaluating Node.js code
+CssSyntaxError: /Users/buchi/Documents/Programming/c0mpile/src/app/globals.css:15:1: Unknown word <<<<<<<
+    at Input.error (node_modules/postcss/lib/input.js:135:16) [/Users/buchi/Documents/Programming/c0mpile/.next/dev/build/chunks/node_modules_fe693df6._.js:4651:22]
+    at Parser.unknownWord (node_modules/postcss/lib/parser.js:595:22) [/Users/buchi/Documents/Programming/c0mpile/.next/dev/build/chunks/node_modules_fe693df6._.js:5835:26]
+    at Parser.other (node_modules/postcss/lib/parser.js:437:12) [/Users/buchi/Documents/Programming/c0mpile/.next/dev/build/chunks/node_modules_fe693df6._.js:5697:18]
+    at Parser.parse (node_modules/postcss/lib/parser.js:472:16) [/Users/buchi/Documents/Programming/c0mpile/.next/dev/build/chunks/node_modules_fe693df6._.js:5724:26]
+    at parse (node_modules/postcss/lib/parse.js:11:12) [/Users/buchi/Documents/Programming/c0mpile/.next/dev/build/chunks/node_modules_fe693df6._.js:5861:16]
+    at new LazyResult (node_modules/postcss/lib/lazy-result.js:165:16) [/Users/buchi/Documents/Programming/c0mpile/.next/dev/build/chunks/node_modules_fe693df6._.js:6122:24]
+    at Processor.process (node_modules/postcss/lib/processor.js:53:14) [/Users/buchi/Documents/Programming/c0mpile/.next/dev/build/chunks/node_modules_fe693df6._.js:6604:20]
+    at transform (turbopack:///[turbopack-node]/transforms/postcss.ts:70:51) [/Users/buchi/Documents/Programming/c0mpile/.next/dev/build/chunks/[root-of-the-server]__51225daf._.js:146:52]
+    at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:92:29) [/Users/buchi/Documents/Programming/c0mpile/.next/dev/build/chunks/[root-of-the-server]__974941ed._.js:451:37]
+    at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:115:11) [/Users/buchi/Documents/Programming/c0mpile/.next/dev/build/chunks/[root-of-the-server]__974941ed._.js:472:25]
+
+Import trace:
+  Client Component Browser:
+    ./src/app/globals.css [Client Component Browser]
+    ./src/app/layout.tsx [Server Component]
+[00:12:26.495] Browser ERROR   ./src/app/page.tsx:1:1
+Parsing ecmascript source code failed
+> 1 | <<<<<<< HEAD
+    | ^^^^^^^
+  2 | "use client";
+  3 |
+  4 | import { useState, useEffect } from "react";
+
+Merge conflict marker encountered.
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+[00:12:26.495] Browser ERROR   ./package.json:6:1
+Error parsing package.json file
+  4 |   "private": true,
+  5 |   "scripts": {
+> 6 | <<<<<<< HEAD
+    | ^
+  7 |     "dev": "node server.js",
+  8 | =======
+  9 |     "dev": "next dev",
+
+package.json is not parseable: invalid JSON: key must be a string at line 6 column 1
+[00:12:26.495] Browser ERROR   ./src/app/globals.css
+Error evaluating Node.js code
+CssSyntaxError: /Users/buchi/Documents/Programming/c0mpile/src/app/globals.css:15:1: Unknown word <<<<<<<
+    at Input.error (node_modules/postcss/lib/input.js:135:16) [/Users/buchi/Documents/Programming/c0mpile/.next/dev/build/chunks/node_modules_fe693df6._.js:4651:22]
+    at Parser.unknownWord (node_modules/postcss/lib/parser.js:595:22) [/Users/buchi/Documents/Programming/c0mpile/.next/dev/build/chunks/node_modules_fe693df6._.js:5835:26]
+    at Parser.other (node_modules/postcss/lib/parser.js:437:12) [/Users/buchi/Documents/Programming/c0mpile/.next/dev/build/chunks/node_modules_fe693df6._.js:5697:18]
+    at Parser.parse (node_modules/postcss/lib/parser.js:472:16) [/Users/buchi/Documents/Programming/c0mpile/.next/dev/build/chunks/node_modules_fe693df6._.js:5724:26]
+    at parse (node_modules/postcss/lib/parse.js:11:12) [/Users/buchi/Documents/Programming/c0mpile/.next/dev/build/chunks/node_modules_fe693df6._.js:5861:16]
+    at new LazyResult (node_modules/postcss/lib/lazy-result.js:165:16) [/Users/buchi/Documents/Programming/c0mpile/.next/dev/build/chunks/node_modules_fe693df6._.js:6122:24]
+    at Processor.process (node_modules/postcss/lib/processor.js:53:14) [/Users/buchi/Documents/Programming/c0mpile/.next/dev/build/chunks/node_modules_fe693df6._.js:6604:20]
+    at transform (turbopack:///[turbopack-node]/transforms/postcss.ts:70:51) [/Users/buchi/Documents/Programming/c0mpile/.next/dev/build/chunks/[root-of-the-server]__51225daf._.js:146:52]
+    at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:92:29) [/Users/buchi/Documents/Programming/c0mpile/.next/dev/build/chunks/[root-of-the-server]__974941ed._.js:451:37]
+    at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:115:11) [/Users/buchi/Documents/Programming/c0mpile/.next/dev/build/chunks/[root-of-the-server]__974941ed._.js:472:25]
+
+Import trace:
+  Client Component Browser:
+    ./src/app/globals.css [Client Component Browser]
+    ./src/app/layout.tsx [Server Component]
+[00:12:26.495] Browser ERROR   ./package.json:6:1
+Error parsing package.json file
+  4 |   "private": true,
+  5 |   "scripts": {
+> 6 | <<<<<<< HEAD
+    | ^
+  7 |     "dev": "node server.js",
+  8 | =======
+  9 |     "dev": "next dev",
+
+package.json is not parseable: invalid JSON: key must be a string at line 6 column 1
+[00:12:26.495] Browser ERROR   ./package.json:6:1
+Error parsing package.json file
+  4 |   "private": true,
+  5 |   "scripts": {
+> 6 | <<<<<<< HEAD
+    | ^
+  7 |     "dev": "node server.js",
+  8 | =======
+  9 |     "dev": "next dev",
+
+package.json is not parseable: invalid JSON: key must be a string at line 6 column 1
+[00:12:26.495] Browser ERROR   ./package.json:6:1
+Error parsing package.json file
+  4 |   "private": true,
+  5 |   "scripts": {
+> 6 | <<<<<<< HEAD
+    | ^
+  7 |     "dev": "node server.js",
+  8 | =======
+  9 |     "dev": "next dev",
+
+package.json is not parseable: invalid JSON: key must be a string at line 6 column 1
+[00:12:26.495] Browser ERROR   ./package.json:6:1
+Error parsing package.json file
+  4 |   "private": true,
+  5 |   "scripts": {
+> 6 | <<<<<<< HEAD
+    | ^
+  7 |     "dev": "node server.js",
+  8 | =======
+  9 |     "dev": "next dev",
+
+package.json is not parseable: invalid JSON: key must be a string at line 6 column 1
+[00:12:26.495] Browser ERROR   ./src/app/globals.css
+Error evaluating Node.js code
+CssSyntaxError: /Users/buchi/Documents/Programming/c0mpile/src/app/globals.css:15:1: Unknown word <<<<<<<
+    at Input.error (node_modules/postcss/lib/input.js:135:16) [/Users/buchi/Documents/Programming/c0mpile/.next/dev/build/chunks/node_modules_fe693df6._.js:4651:22]
+    at Parser.unknownWord (node_modules/postcss/lib/parser.js:595:22) [/Users/buchi/Documents/Programming/c0mpile/.next/dev/build/chunks/node_modules_fe693df6._.js:5835:26]
+    at Parser.other (node_modules/postcss/lib/parser.js:437:12) [/Users/buchi/Documents/Programming/c0mpile/.next/dev/build/chunks/node_modules_fe693df6._.js:5697:18]
+    at Parser.parse (node_modules/postcss/lib/parser.js:472:16) [/Users/buchi/Documents/Programming/c0mpile/.next/dev/build/chunks/node_modules_fe693df6._.js:5724:26]
+    at parse (node_modules/postcss/lib/parse.js:11:12) [/Users/buchi/Documents/Programming/c0mpile/.next/dev/build/chunks/node_modules_fe693df6._.js:5861:16]
+    at new LazyResult (node_modules/postcss/lib/lazy-result.js:165:16) [/Users/buchi/Documents/Programming/c0mpile/.next/dev/build/chunks/node_modules_fe693df6._.js:6122:24]
+    at Processor.process (node_modules/postcss/lib/processor.js:53:14) [/Users/buchi/Documents/Programming/c0mpile/.next/dev/build/chunks/node_modules_fe693df6._.js:6604:20]
+    at transform (turbopack:///[turbopack-node]/transforms/postcss.ts:70:51) [/Users/buchi/Documents/Programming/c0mpile/.next/dev/build/chunks/[root-of-the-server]__51225daf._.js:146:52]
+    at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:92:29) [/Users/buchi/Documents/Programming/c0mpile/.next/dev/build/chunks/[root-of-the-server]__974941ed._.js:451:37]
+    at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:115:11) [/Users/buchi/Documents/Programming/c0mpile/.next/dev/build/chunks/[root-of-the-server]__974941ed._.js:472:25]
+
+Import trace:
+  Client Component Browser:
+    ./src/app/globals.css [Client Component Browser]
+    ./src/app/layout.tsx [Server Component]
+[00:12:26.495] Browser ERROR   ./src/app/page.tsx:1:1
+Parsing ecmascript source code failed
+> 1 | <<<<<<< HEAD
+    | ^^^^^^^
+  2 | "use client";
+  3 |
+  4 | import { useState, useEffect } from "react";
+
+Merge conflict marker encountered.
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+[00:12:26.930] Browser ERROR   uncaughtError: Error: ./package.json:6:1
+Error parsing package.json file
+  4 |   "private": true,
+  5 |   "scripts": {
+> 6 | <<<<<<< HEAD
+    | ^
+  7 |     "dev": "node server.js",
+  8 | =======
+  9 |     "dev": "next dev",
+
+package.json is not parseable: invalid JSON: key must be a string at line 6 column 1
+
+
+[00:12:27.070] Browser ERROR   ./package.json:6:1
+Error parsing package.json file
+  4 |   "private": true,
+  5 |   "scripts": {
+> 6 | <<<<<<< HEAD
+    | ^
+  7 |     "dev": "node server.js",
+  8 | =======
+  9 |     "dev": "next dev",
+
+package.json is not parseable: invalid JSON: key must be a string at line 6 column 1
+[00:12:27.070] Browser ERROR   ./src/app/globals.css
+Error evaluating Node.js code
+CssSyntaxError: /Users/buchi/Documents/Programming/c0mpile/src/app/globals.css:15:1: Unknown word <<<<<<<
+    at Input.error (node_modules/postcss/lib/input.js:135:16) [/Users/buchi/Documents/Programming/c0mpile/.next/dev/build/chunks/node_modules_fe693df6._.js:4651:22]
+    at Parser.unknownWord (node_modules/postcss/lib/parser.js:595:22) [/Users/buchi/Documents/Programming/c0mpile/.next/dev/build/chunks/node_modules_fe693df6._.js:5835:26]
+    at Parser.other (node_modules/postcss/lib/parser.js:437:12) [/Users/buchi/Documents/Programming/c0mpile/.next/dev/build/chunks/node_modules_fe693df6._.js:5697:18]
+    at Parser.parse (node_modules/postcss/lib/parser.js:472:16) [/Users/buchi/Documents/Programming/c0mpile/.next/dev/build/chunks/node_modules_fe693df6._.js:5724:26]
+    at parse (node_modules/postcss/lib/parse.js:11:12) [/Users/buchi/Documents/Programming/c0mpile/.next/dev/build/chunks/node_modules_fe693df6._.js:5861:16]
+    at new LazyResult (node_modules/postcss/lib/lazy-result.js:165:16) [/Users/buchi/Documents/Programming/c0mpile/.next/dev/build/chunks/node_modules_fe693df6._.js:6122:24]
+    at Processor.process (node_modules/postcss/lib/processor.js:53:14) [/Users/buchi/Documents/Programming/c0mpile/.next/dev/build/chunks/node_modules_fe693df6._.js:6604:20]
+    at transform (turbopack:///[turbopack-node]/transforms/postcss.ts:70:51) [/Users/buchi/Documents/Programming/c0mpile/.next/dev/build/chunks/[root-of-the-server]__51225daf._.js:146:52]
+    at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:92:29) [/Users/buchi/Documents/Programming/c0mpile/.next/dev/build/chunks/[root-of-the-server]__974941ed._.js:451:37]
+    at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:115:11) [/Users/buchi/Documents/Programming/c0mpile/.next/dev/build/chunks/[root-of-the-server]__974941ed._.js:472:25]
+
+Import trace:
+  Client Component Browser:
+    ./src/app/globals.css [Client Component Browser]
+    ./src/app/layout.tsx [Server Component]
+[00:12:27.070] Browser ERROR   ./src/app/page.tsx:1:1
+Parsing ecmascript source code failed
+> 1 | <<<<<<< HEAD
+    | ^^^^^^^
+  2 | "use client";
+  3 |
+  4 | import { useState, useEffect } from "react";
+
+Merge conflict marker encountered.
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+[00:12:27.070] Browser ERROR   ./package.json:6:1
+Error parsing package.json file
+  4 |   "private": true,
+  5 |   "scripts": {
+> 6 | <<<<<<< HEAD
+    | ^
+  7 |     "dev": "node server.js",
+  8 | =======
+  9 |     "dev": "next dev",
+
+package.json is not parseable: invalid JSON: key must be a string at line 6 column 1
+[00:12:27.070] Browser ERROR   ./src/app/globals.css
+Error evaluating Node.js code
+CssSyntaxError: /Users/buchi/Documents/Programming/c0mpile/src/app/globals.css:15:1: Unknown word <<<<<<<
+    at Input.error (node_modules/postcss/lib/input.js:135:16) [/Users/buchi/Documents/Programming/c0mpile/.next/dev/build/chunks/node_modules_fe693df6._.js:4651:22]
+    at Parser.unknownWord (node_modules/postcss/lib/parser.js:595:22) [/Users/buchi/Documents/Programming/c0mpile/.next/dev/build/chunks/node_modules_fe693df6._.js:5835:26]
+    at Parser.other (node_modules/postcss/lib/parser.js:437:12) [/Users/buchi/Documents/Programming/c0mpile/.next/dev/build/chunks/node_modules_fe693df6._.js:5697:18]
+    at Parser.parse (node_modules/postcss/lib/parser.js:472:16) [/Users/buchi/Documents/Programming/c0mpile/.next/dev/build/chunks/node_modules_fe693df6._.js:5724:26]
+    at parse (node_modules/postcss/lib/parse.js:11:12) [/Users/buchi/Documents/Programming/c0mpile/.next/dev/build/chunks/node_modules_fe693df6._.js:5861:16]
+    at new LazyResult (node_modules/postcss/lib/lazy-result.js:165:16) [/Users/buchi/Documents/Programming/c0mpile/.next/dev/build/chunks/node_modules_fe693df6._.js:6122:24]
+    at Processor.process (node_modules/postcss/lib/processor.js:53:14) [/Users/buchi/Documents/Programming/c0mpile/.next/dev/build/chunks/node_modules_fe693df6._.js:6604:20]
+    at transform (turbopack:///[turbopack-node]/transforms/postcss.ts:70:51) [/Users/buchi/Documents/Programming/c0mpile/.next/dev/build/chunks/[root-of-the-server]__51225daf._.js:146:52]
+    at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:92:29) [/Users/buchi/Documents/Programming/c0mpile/.next/dev/build/chunks/[root-of-the-server]__974941ed._.js:451:37]
+    at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:115:11) [/Users/buchi/Documents/Programming/c0mpile/.next/dev/build/chunks/[root-of-the-server]__974941ed._.js:472:25]
+
+Import trace:
+  Client Component Browser:
+    ./src/app/globals.css [Client Component Browser]
+    ./src/app/layout.tsx [Server Component]
+[00:12:27.070] Browser ERROR   ./package.json:6:1
+Error parsing package.json file
+  4 |   "private": true,
+  5 |   "scripts": {
+> 6 | <<<<<<< HEAD
+    | ^
+  7 |     "dev": "node server.js",
+  8 | =======
+  9 |     "dev": "next dev",
+
+package.json is not parseable: invalid JSON: key must be a string at line 6 column 1
+[00:12:27.070] Browser ERROR   ./package.json:6:1
+Error parsing package.json file
+  4 |   "private": true,
+  5 |   "scripts": {
+> 6 | <<<<<<< HEAD
+    | ^
+  7 |     "dev": "node server.js",
+  8 | =======
+  9 |     "dev": "next dev",
+
+package.json is not parseable: invalid JSON: key must be a string at line 6 column 1
+[00:12:27.070] Browser ERROR   ./package.json:6:1
+Error parsing package.json file
+  4 |   "private": true,
+  5 |   "scripts": {
+> 6 | <<<<<<< HEAD
+    | ^
+  7 |     "dev": "node server.js",
+  8 | =======
+  9 |     "dev": "next dev",
+
+package.json is not parseable: invalid JSON: key must be a string at line 6 column 1
+[00:12:27.070] Browser ERROR   ./package.json:6:1
+Error parsing package.json file
+  4 |   "private": true,
+  5 |   "scripts": {
+> 6 | <<<<<<< HEAD
+    | ^
+  7 |     "dev": "node server.js",
+  8 | =======
+  9 |     "dev": "next dev",
+
+package.json is not parseable: invalid JSON: key must be a string at line 6 column 1
+[00:12:27.070] Browser ERROR   ./src/app/globals.css
+Error evaluating Node.js code
+CssSyntaxError: /Users/buchi/Documents/Programming/c0mpile/src/app/globals.css:15:1: Unknown word <<<<<<<
+    at Input.error (node_modules/postcss/lib/input.js:135:16) [/Users/buchi/Documents/Programming/c0mpile/.next/dev/build/chunks/node_modules_fe693df6._.js:4651:22]
+    at Parser.unknownWord (node_modules/postcss/lib/parser.js:595:22) [/Users/buchi/Documents/Programming/c0mpile/.next/dev/build/chunks/node_modules_fe693df6._.js:5835:26]
+    at Parser.other (node_modules/postcss/lib/parser.js:437:12) [/Users/buchi/Documents/Programming/c0mpile/.next/dev/build/chunks/node_modules_fe693df6._.js:5697:18]
+    at Parser.parse (node_modules/postcss/lib/parser.js:472:16) [/Users/buchi/Documents/Programming/c0mpile/.next/dev/build/chunks/node_modules_fe693df6._.js:5724:26]
+    at parse (node_modules/postcss/lib/parse.js:11:12) [/Users/buchi/Documents/Programming/c0mpile/.next/dev/build/chunks/node_modules_fe693df6._.js:5861:16]
+    at new LazyResult (node_modules/postcss/lib/lazy-result.js:165:16) [/Users/buchi/Documents/Programming/c0mpile/.next/dev/build/chunks/node_modules_fe693df6._.js:6122:24]
+    at Processor.process (node_modules/postcss/lib/processor.js:53:14) [/Users/buchi/Documents/Programming/c0mpile/.next/dev/build/chunks/node_modules_fe693df6._.js:6604:20]
+    at transform (turbopack:///[turbopack-node]/transforms/postcss.ts:70:51) [/Users/buchi/Documents/Programming/c0mpile/.next/dev/build/chunks/[root-of-the-server]__51225daf._.js:146:52]
+    at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:92:29) [/Users/buchi/Documents/Programming/c0mpile/.next/dev/build/chunks/[root-of-the-server]__974941ed._.js:451:37]
+    at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:115:11) [/Users/buchi/Documents/Programming/c0mpile/.next/dev/build/chunks/[root-of-the-server]__974941ed._.js:472:25]
+
+Import trace:
+  Client Component Browser:
+    ./src/app/globals.css [Client Component Browser]
+    ./src/app/layout.tsx [Server Component]
+[00:12:27.070] Browser ERROR   ./src/app/page.tsx:1:1
+Parsing ecmascript source code failed
+> 1 | <<<<<<< HEAD
+    | ^^^^^^^
+  2 | "use client";
+  3 |
+  4 | import { useState, useEffect } from "react";
+
+Merge conflict marker encountered.
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+[00:12:54.655] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:12:54.869] Browser ERROR   ./package.json:6:1
+Error parsing package.json file
+  4 |   "private": true,
+  5 |   "scripts": {
+> 6 | <<<<<<< HEAD
+    | ^
+  7 |     "dev": "node server.js",
+  8 | =======
+  9 |     "dev": "next dev",
+
+package.json is not parseable: invalid JSON: key must be a string at line 6 column 1
+[00:12:54.869] Browser ERROR   ./package.json:6:1
+Error parsing package.json file
+  4 |   "private": true,
+  5 |   "scripts": {
+> 6 | <<<<<<< HEAD
+    | ^
+  7 |     "dev": "node server.js",
+  8 | =======
+  9 |     "dev": "next dev",
+
+package.json is not parseable: invalid JSON: key must be a string at line 6 column 1
+[00:12:54.869] Browser ERROR   ./package.json:6:1
+Error parsing package.json file
+  4 |   "private": true,
+  5 |   "scripts": {
+> 6 | <<<<<<< HEAD
+    | ^
+  7 |     "dev": "node server.js",
+  8 | =======
+  9 |     "dev": "next dev",
+
+package.json is not parseable: invalid JSON: key must be a string at line 6 column 1
+[00:12:54.869] Browser ERROR   ./package.json:6:1
+Error parsing package.json file
+  4 |   "private": true,
+  5 |   "scripts": {
+> 6 | <<<<<<< HEAD
+    | ^
+  7 |     "dev": "node server.js",
+  8 | =======
+  9 |     "dev": "next dev",
+
+package.json is not parseable: invalid JSON: key must be a string at line 6 column 1
+[00:13:04.201] Browser ERROR   ./package.json:6:1
+Error parsing package.json file
+  4 |   "private": true,
+  5 |   "scripts": {
+> 6 | <<<<<<< HEAD
+    | ^
+  7 |     "dev": "node server.js",
+  8 | =======
+  9 |     "dev": "next dev",
+
+package.json is not parseable: invalid JSON: key must be a string at line 6 column 1
+[00:13:04.681] Browser ERROR   ./package.json:6:1
+Error parsing package.json file
+  4 |   "private": true,
+  5 |   "scripts": {
+> 6 | <<<<<<< HEAD
+    | ^
+  7 |     "dev": "node server.js",
+  8 | =======
+  9 |     "dev": "next dev",
+
+package.json is not parseable: invalid JSON: key must be a string at line 6 column 1
